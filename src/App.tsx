@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import Footer from './components/footer/Index'
 import Navbar from './components/navbar/Navbar'
 import Favourites from './pages/Favourites'
 import Home from './pages/Home'
@@ -19,6 +20,7 @@ function App() {
           <Route path="/news" element={<News />} />
         </Routes>
       </main>
+      <Footer />
     </>
   )
 }

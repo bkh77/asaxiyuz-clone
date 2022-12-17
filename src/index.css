@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.footer-title-list {
+  @apply cursor-pointer  transition-all hover:translate-x-3;
+}
