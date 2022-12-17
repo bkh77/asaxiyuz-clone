@@ -1,10 +1,10 @@
-import logo from '../../assets/asaxiy-logo.svg'
-import payment from '../../assets/payment.svg'
-import tracker from '../../assets/tracker.svg'
-import language from '../../assets/language.svg'
-import cart from '../../assets/cart.svg'
-import heart from '../../assets/heart.svg'
-import avatar from '../../assets/avatar.svg'
+import logo from '../../assets/logos/asaxiy-logo.svg'
+import payment from '../../assets/logos/payment.svg'
+import tracker from '../../assets/logos/tracker.svg'
+import language from '../../assets/logos/language.svg'
+import cart from '../../assets/logos/cart.svg'
+import heart from '../../assets/logos/heart.svg'
+import avatar from '../../assets/logos/avatar.svg'
 import SearchInput from './SearchInput'
 import Menu from './Menu'
 import { Link } from 'react-router-dom'
@@ -15,7 +15,7 @@ export default function Navbar() {
   const [langSelect, setLangSelect] = useState(false)
   const [lang, setLang] = useState("O'zbekcha")
   return (
-    <>
+    <div className='hidden lg:block' >
       <nav className="flex items-center justify-between space-x-10 border-b border-gray bg-white p-6">
         <Link to="/">
           <img src={logo} alt="logo" />
@@ -77,16 +77,13 @@ export default function Navbar() {
               </div>
             )}
           </div>
-          <Link
-            to={''}
-            className="relative flex cursor-pointer  flex-col items-center text-sm hover:text-blue"
-          >
+          <div className="relative flex cursor-pointer  flex-col items-center text-sm hover:text-blue">
             <img className="h-7 w-7" src={cart} alt="cart logo" />
             <span>Savatcha</span>
             <div className="absolute right-2 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-blue  text-white">
               5
             </div>
-          </Link>
+          </div>
           <Link
             to="/favourites"
             className="relative flex cursor-pointer  flex-col items-center text-sm hover:text-blue "
@@ -107,6 +104,6 @@ export default function Navbar() {
         </div>
       </nav>
       <Menu />
-    </>
+    </div>
   )
 }
