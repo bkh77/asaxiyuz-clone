@@ -5,11 +5,18 @@ module.exports = {
     extend: {},
     fontFamily: { body: ['Roboto', 'sans-serif'] },
     colors: {
-      blue: '#008DFF',
-      'blue-dark': '#0071CC',
+      blue: {
+        DEFAULT: '#008DFF',
+        darker: '#0071CC',
+        dark: '#001068',
+      },
       white: '#ffffff',
-      gray: '#F4F7FD',
-      'gray-dark': '#777777',
+      gray: {
+        DEFAULT: '#F4F7FD',
+        dark: '#777777',
+        light: '#bbbbbb',
+      },
+      red: '#e40000',
     },
   },
   plugins: [],
