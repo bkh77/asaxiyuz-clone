@@ -4,7 +4,7 @@ import Button from '../components/form/Button'
 export default function OrderPay() {
   return (
     <div className="my-12 mx-auto w-96  rounded-xl bg-white p-6 text-gray-dark shadow-lg">
-      <h1 className="mb-6 text-4xl text-blue-dark">To'lov qilish</h1>
+      <h1>To'lov qilish</h1>
 
       <p className="mb-4">Buyurtma raqamini bexato kiriting</p>
       <form onSubmit={(e) => e.preventDefault()}>
