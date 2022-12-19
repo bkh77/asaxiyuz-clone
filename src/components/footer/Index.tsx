@@ -25,7 +25,7 @@ export default function Footer() {
       <footer className="bg-blue p-6">
         <Faetures />
 
-        <div className="mt-4 grid grid-cols-1  md:grid-cols-3 md:space-x-6 text-white">
+        <div className="mt-4 grid grid-cols-1  text-white md:grid-cols-3 md:space-x-6">
           <div className="space-y-2">
             <h5 className="mb-3 text-lg font-semibold">Ma'lumotlar</h5>
             <p className="footer-title-list">
@@ -86,8 +86,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-4 flex items-center justify-center space-x-6 border-t border-b border-white p-3 text-white flex-wrap">
-          <p className='hidden md:block' >To'lov turlari: </p>
+        <div className="mt-4 flex flex-wrap items-center justify-center space-x-6 border-t border-b border-white p-3 text-white">
+          <p className="hidden md:block">To'lov turlari: </p>
           <img className="w-20 cursor-pointer" src={click} alt="click logo" />
           <img className="w-20 cursor-pointer" src={payme} alt="payme logo" />
           <img className="w-16 cursor-pointer" src={visa} alt="visa logo" />
