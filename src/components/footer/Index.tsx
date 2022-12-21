@@ -23,7 +23,7 @@ export default function Footer() {
       <BrendSwipe />
       <AppBanner />
       <footer className="bg-blue p-6">
-        <Faetures />
+        <Faetures className="sm:grid-cols-2 xl:grid-cols-4 xl:space-x-4 bg-white" />
 
         <div className="mt-4 grid grid-cols-1  text-white md:grid-cols-3 md:space-x-6">
           <div className="space-y-2">

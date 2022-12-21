@@ -16,9 +16,7 @@ export default function OrderPay() {
         />
 
         <div className="mt-4">
-          <Button className="bg-blue before:bg-blue-darker/50">
-            Tasdiqlash
-          </Button>
+          <Button color="primary">Tasdiqlash</Button>
         </div>
       </form>
     </div>

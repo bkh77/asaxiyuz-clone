@@ -3,9 +3,9 @@ import fastDelivery from '../../assets/footer/fast-delivery.svg'
 import market from '../../assets/footer/market.svg'
 import returnIcon from '../../assets/footer/return.svg'
 
-export default function Faetures() {
+export default function Faetures({ className }: { className?: string }) {
   return (
-    <div className="grid grid-cols-1 rounded-2xl  bg-white p-6 sm:grid-cols-2 xl:grid-cols-4 xl:space-x-4">
+    <div className={`grid grid-cols-1 rounded-2xl  p-6 ${className}`}>
       <div className="flex items-center space-x-6">
         <img className="h-14 w-14" src={market} alt="market icon" />
         <div>

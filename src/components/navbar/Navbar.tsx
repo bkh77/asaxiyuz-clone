@@ -10,12 +10,15 @@ import Menu from './Menu'
 import { Link } from 'react-router-dom'
 import { FaAngleDown } from 'react-icons/fa'
 import { useState } from 'react'
+import { useMainContext } from '../../context/MainContext'
 
 export default function Navbar() {
   const [langSelect, setLangSelect] = useState(false)
   const [lang, setLang] = useState("O'zbekcha")
+
+  const { openModal } = useMainContext()
   return (
-    <div className='hidden lg:block' >
+    <div className="hidden lg:block">
       <nav className="flex items-center justify-between space-x-10 border-b border-gray bg-white p-6">
         <Link to="/">
           <img src={logo} alt="logo" />
@@ -39,9 +42,8 @@ export default function Navbar() {
             <span>Trek</span>
           </Link>
           <div className="relative">
-            <Link
+            <div
               onClick={() => setLangSelect((prev) => !prev)}
-              to={''}
               className="flex cursor-pointer flex-col  items-center text-sm hover:text-blue"
             >
               <img
@@ -53,7 +55,7 @@ export default function Navbar() {
               <span>
                 {lang} <FaAngleDown className="inline h-4 w-4" />
               </span>
-            </Link>
+            </div>
             {langSelect && (
               <div className="absolute -left-4  flex h-24 w-28 flex-col space-y-3 rounded-xl bg-white p-6 text-sm shadow-xl">
                 <span
@@ -94,13 +96,13 @@ export default function Navbar() {
               3
             </div>
           </Link>
-          <Link
-            to={''}
+          <div
+            onClick={openModal}
             className="flex cursor-pointer flex-col items-center  text-sm hover:text-blue"
           >
             <img className="h-7 w-7" src={avatar} alt="avatar logo" />
             <span>Кабинет</span>
-          </Link>
+          </div>
         </div>
       </nav>
       <Menu />
