@@ -6,10 +6,11 @@ import Home from './pages/Home'
 import News from './pages/News'
 import OrderPay from './pages/OrderPay'
 import OrderStatus from './pages/OrderStatus'
+import { MainContextProvider } from './context/MainContext'
 
 function App() {
   return (
-    <>
+    <MainContextProvider>
       <Navbar />
       <main>
         <Routes>
@@ -21,7 +22,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </MainContextProvider>
   )
 }
 

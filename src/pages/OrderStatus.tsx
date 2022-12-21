@@ -28,9 +28,9 @@ export default function OrderStatus() {
             required
           />
 
-          <Button className="mt-6 w-full bg-blue before:bg-blue-darker/50 md:w-auto">
-            Ko'rinish
-          </Button>
+          <div className='mt-6' >
+            <Button color="primary">Ko'rinish</Button>
+          </div>
         </form>
       </div>
 

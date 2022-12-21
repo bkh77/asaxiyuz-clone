@@ -13,7 +13,7 @@ export default function Favourites() {
         </div>
       </div>
 
-      <div className='space-y-8' >
+      <div className="space-y-8">
         <FavouritesCard />
         <FavouritesCard />
       </div>

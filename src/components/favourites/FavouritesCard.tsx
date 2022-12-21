@@ -29,11 +29,11 @@ export default function FavouritesCard() {
       </div>
 
       <div className="flex  lg:flex-col lg:space-y-4 ">
-        <Button className="bg-blue before:bg-blue-darker/50 lg:w-48">
+        <Button className="lg:w-48" color="primary">
           Savatga qo'shish
         </Button>
 
-        <Button className="ml-auto bg-orange before:bg-orange-dark/50 lg:w-48">
+        <Button className="ml-auto lg:w-48" color="orange">
           O'chirish
         </Button>
       </div>
