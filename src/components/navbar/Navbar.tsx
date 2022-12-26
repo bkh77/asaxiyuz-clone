@@ -18,8 +18,8 @@ export default function Navbar() {
 
   const { openModal } = useMainContext()
   return (
-    <div className="hidden lg:block">
-      <nav className="flex items-center justify-between space-x-10 border-b border-gray bg-white p-6">
+    <div className="hidden bg-white shadow-3xl lg:block">
+      <nav className="mx-auto flex max-w-[1336px] items-center justify-between space-x-10 border-b border-gray  p-6">
         <Link to="/">
           <img src={logo} alt="logo" />
         </Link>

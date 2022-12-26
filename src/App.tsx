@@ -12,7 +12,7 @@ function App() {
   return (
     <MainContextProvider>
       <Navbar />
-      <main>
+      <main className='max-w-[1336px] mx-auto' >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/order-pay" element={<OrderPay />} />

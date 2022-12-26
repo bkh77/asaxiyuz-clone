@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  box-sizing: border-box;
+}
+
 h1 {
   @apply mb-6 text-4xl font-semibold text-blue-dark;
 }
@@ -13,7 +18,7 @@ h1 {
 }
 
 .btn {
-  @apply relative rounded-lg  px-4 py-2 text-sm text-white;
+  @apply relative rounded-lg  py-2 text-sm text-white;
   transition: color 0.4s linear;
 }
 
@@ -40,8 +45,4 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-b {
-  color: rgba(0, 0, 0, 0.2);
 }

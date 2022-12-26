@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, ReactNode } from 'react'
 
 type ButtonProps = {
   children: ReactNode
-  color: 'primary' | 'orange'
+  color: 'primary' | 'orange' | 'green'
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
 export default function Button({
@@ -16,7 +16,9 @@ export default function Button({
       className={`btn ${
         color === 'primary'
           ? 'bg-blue before:bg-blue-darker/50'
-          : 'bg-orange before:bg-orange-dark/50'
+          : color === 'orange'
+          ? 'bg-orange before:bg-orange-dark/50'
+          : 'bg-green before:bg-green-dark/50'
       } ${className}`}
       {...rest}
     >
