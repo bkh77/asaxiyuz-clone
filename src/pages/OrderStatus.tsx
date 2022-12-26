@@ -29,7 +29,7 @@ export default function OrderStatus() {
           />
 
           <div className='mt-6' >
-            <Button color="primary">Ko'rinish</Button>
+            <Button color="primary" className='px-4' >Ko'rinish</Button>
           </div>
         </form>
       </div>
