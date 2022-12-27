@@ -3,22 +3,27 @@ import { currencyFormat } from '../../utils/currencyFomat'
 import { Link } from 'react-router-dom'
 import { FaRegHeart, FaShoppingCart, FaStar } from 'react-icons/fa'
 import { BiComment } from 'react-icons/bi'
+import data from '../../data/products.json'
+import { useId } from 'react'
 
-export default function Card() {
+export default function Card({ id }: { id: number }) {
+  const product = data.find((item) => item.id === id)
+  if (product == null) return null
+
+  useId()
+
   return (
-    <div className="relative overflow-hidden rounded-3xl bg-white p-4 shadow-3xl">
+    <div className="relative overflow-hidden rounded-3xl bg-white p-4 shadow-3xl transition duration-200 hover:text-blue">
       <Link to={'#'}>
         <div className="h-40">
           <img
             className="h-full w-full object-contain"
-            src="https://assets.asaxiy.uz/product/main_image/desktop//6325bc285a4d1.png.webp"
-            alt=""
+            src={product?.imgs[0]}
+            alt={product?.brend}
           />
         </div>
 
-        <p className="my-2 text-sm font-medium">
-          Samsung VC21K5150HP (Vyetnam) changyutgichi
-        </p>
+        <p className="my-truncate my-2 text-sm font-medium">{product?.title}</p>
 
         <div className="flex items-center space-x-2 py-2">
           <span className="flex items-center space-x-1 text-blue">
@@ -33,12 +38,20 @@ export default function Card() {
           </span>
         </div>
 
-        <div className="my-2">
-          <p className="text-sm text-red-dark line-through">
-            {currencyFormat(5600)}
+        <div className="my-2 text-black">
+          <p
+            className={`text-sm text-red-dark line-through ${
+              product.discount ? 'visible' : 'invisible'
+            }`}
+          >
+            {currencyFormat(product?.oldPrice)}
           </p>
-          <p className="font-medium">{currencyFormat(105000)}</p>
-          <p className="text-sm">{currencyFormat(12300)} / 12 oy</p>
+
+          <p className="font-medium">{currencyFormat(product?.price)}</p>
+          <p className="text-sm">
+            {currencyFormat(product.installment)} / {product.installmentMonth}{' '}
+            oy
+          </p>
         </div>
       </Link>
 
@@ -52,17 +65,27 @@ export default function Card() {
       </div>
 
       <div className="absolute top-4 left-4 space-x-2">
-        <span className="cursor-pointer rounded-md bg-orange py-1 px-2 text-xs uppercase text-white">
-          chegirma
-        </span>
-        <span className="cursor-pointer rounded-md bg-red py-1 px-2 text-xs uppercase text-white">
-          yangi
-        </span>
+        {product.discount && (
+          <span className="cursor-pointer rounded-md bg-orange py-1 px-2 text-xs uppercase text-white">
+            chegirma
+          </span>
+        )}
+        {product.new && (
+          <span className="cursor-pointer rounded-md bg-red py-1 px-2 text-xs uppercase text-white">
+            yangi
+          </span>
+        )}
       </div>
-      <span className="absolute top-4 right-4 cursor-pointer rounded-lg bg-blue p-2 text-xs  text-white">
+      <span
+        title="Savatchaga qo'shish"
+        className="absolute top-4 right-4 cursor-pointer rounded-lg bg-blue p-2 text-xs  text-white"
+      >
         <FaShoppingCart className="h-4 w-4" />
       </span>
-      <span className="bg-transparent absolute top-14 right-3 cursor-pointer p-1 text-xs  text-gray-light">
+      <span
+        title="Sevimlilarga qo'shish"
+        className="bg-transparent absolute top-14 right-3 cursor-pointer p-1 text-xs  text-gray-light"
+      >
         <FaRegHeart className="h-7 w-7" />
       </span>
     </div>
