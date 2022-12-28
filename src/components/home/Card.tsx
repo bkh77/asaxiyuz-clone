@@ -4,13 +4,11 @@ import { Link } from 'react-router-dom'
 import { FaRegHeart, FaShoppingCart, FaStar } from 'react-icons/fa'
 import { BiComment } from 'react-icons/bi'
 import data from '../../data/products.json'
-import { useId } from 'react'
 
 export default function Card({ id }: { id: number }) {
   const product = data.find((item) => item.id === id)
   if (product == null) return null
 
-  useId()
 
   return (
     <div className="relative overflow-hidden rounded-3xl bg-white p-4 shadow-3xl transition duration-200 hover:text-blue">
