@@ -18,7 +18,7 @@ h1 {
 }
 
 .btn {
-  @apply relative rounded-lg  py-2 text-sm text-white;
+  @apply relative rounded-lg text-sm;
   transition: color 0.4s linear;
 }
 

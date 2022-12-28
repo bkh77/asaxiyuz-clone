@@ -26,7 +26,7 @@ export default function Modal({ isOpenModal, closeModal }: ModalProps) {
             <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
               <Input label="Telefon" type={'tel'} name="user-phone" required />
 
-              <Button className="w-full uppercase" color="primary">
+              <Button className="w-full uppercase py-2" color="primary">
                 Faollashtirish kodini olish
               </Button>
             </form>

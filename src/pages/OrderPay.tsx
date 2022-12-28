@@ -18,7 +18,7 @@ export default function OrderPay() {
         />
 
         <div className="mt-6">
-          <Button color="primary" className="px-4">
+          <Button color="primary" className="px-4 py-2">
             Tasdiqlash
           </Button>
         </div>

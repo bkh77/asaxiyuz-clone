@@ -34,12 +34,12 @@ export default function Home() {
 
           <div className="hidden lg:block">
             <p className="mb-2 mt-4 font-bold text-gray-light">Hafta tovari</p>
-            <Card id={2} />
+            <Card id={'n02'} />
 
             <p className="mb-2 mt-4 font-bold text-gray-light">
               Eng yaxshi mahsulot
             </p>
-            <Card id={4} />
+            <Card id={'n04'} />
           </div>
         </div>
         <div className="lg:w-3/4">
@@ -76,7 +76,7 @@ export default function Home() {
           turish imkonini beradi.
         </p>
 
-        <p className='mt-8' >
+        <p className="mt-8">
           "Asaxiy Books" MCHJ <br /> Ro'yxatdan o'tish raqami: 646439 <br />{' '}
           INN: 305829008 <br />
           MCHJ rahbari: Allayev Firuz Abdunasimovich

@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "n01",
     "title": "HP 250 G8. Core i3- 1115G4. DDR4 8. SSD 256 Gb. 15,6 FullHD Silver Noutbuki",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/8d1d32bb35b2f59785e501ab42ba0d522022091814503453393B6882qzecO.jpg.webp"
@@ -34,7 +34,7 @@
     "new": false
   },
   {
-    "id": 2,
+    "id": "n02",
     "title": "Acer Aspire A315-59G-50FH. Core I5-1235U. DDR4 8GB. HDD 1000Gb. MX550 2GB. FullHD 15.6\". Silver Noutbuki",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/ff33f1b12213e021c2c4a888141953ba2022112700020697860h6haqHt6p0.jpg.webp",
@@ -70,7 +70,7 @@
     "new": true
   },
   {
-    "id": 3,
+    "id": "n03",
     "title": "Ноутбук HP VICTUS (16.1 FHD IPS 144Hz 300nits/ i7-11800H/ 16GB/ SSD 1TB/ RTX3060 6GB/ DOS (RUSSIAN)",
     "imgs": [
       "https://assets.asaxiy.uz/product/main_image/desktop//63a007b604cc5.jpg.webp"
@@ -104,7 +104,7 @@
     "new": true
   },
   {
-    "id": 4,
+    "id": "n04",
     "title": "Dell Vostro 3400. Core i5-1135G7. DDR4 8GB. SSD 256GB + HDD 1000GB. 14\" Noutbuki",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/6512bd43d9caa6e02c990b0a82652dca2022070611355765209osSjU0wjbI.jpeg.webp",
@@ -141,7 +141,7 @@
     "new": false
   },
   {
-    "id": 5,
+    "id": "n05",
     "title": "Acer A515-45-R03P Ryzen R5-5500U, DDR4 8GB, SSD 512Gb, 15.6\" FullHD, Backlight, Fingerprint, Win 11. Noutbuki",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/a95dcb8aebb202efeedb10d5538edeb92022112700210370985JZWlTaxNYF.jpg.webp"
@@ -175,7 +175,7 @@
     "new": false
   },
   {
-    "id": 6,
+    "id": "n06",
     "title": "HP 15S-FQ5006NIA. Core I5-1235U. DDR4 8GB. SSD 256GB. 15.6\"HD Noutbuk",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/357aa502337776a7f8cbff80aa6e346c2022111919105892654OTejJ1c3QZ.png.webp",
@@ -211,7 +211,7 @@
     "new": false
   },
   {
-    "id": 7,
+    "id": "n07",
     "title": "Lenovo Legion 5 15IMH6. Core I5-10500H. DDR4 8GB. SSD 256 GB. GeForce RTX 3050. 15.6\" Full HD IPS. RU KB. Phanton black Noutbuki",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/171b6bf0598a853c7b2234350e8555162022122013445884179XFTXfdQ47C.jpg.webp",
@@ -247,7 +247,7 @@
     "new": true
   },
   {
-    "id": 8,
+    "id": "n08",
     "title": "Ноутбук DELL XPS 15 9500 / Core i5-10300H / DDR4 8GB / SSD 512GB / 15.6\" (1920x1200) / Win 10",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/b706835de79a2b4e80506f582af3676a2021102818164982762ek7Lc61j9D.jpg.webp"
@@ -281,7 +281,7 @@
     "new": false
   },
   {
-    "id": 9,
+    "id": "n09",
     "title": "HP 250 G8. Core i3- 1115G4. DDR4 8. SSD 256 Gb. 15,6 FullHD Silver Noutbuki",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/8d1d32bb35b2f59785e501ab42ba0d522022091814503453393B6882qzecO.jpg.webp"
@@ -315,7 +315,7 @@
     "new": false
   },
   {
-    "id": 10,
+    "id": "n10",
     "title": "Acer Aspire A315-59G-50FH. Core I5-1235U. DDR4 8GB. HDD 1000Gb. MX550 2GB. FullHD 15.6\". Silver Noutbuki",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/ff33f1b12213e021c2c4a888141953ba2022112700020697860h6haqHt6p0.jpg.webp",
@@ -351,7 +351,7 @@
     "new": true
   },
   {
-    "id": 11,
+    "id": "n11",
     "title": "Ноутбук HP VICTUS (16.1 FHD IPS 144Hz 300nits/ i7-11800H/ 16GB/ SSD 1TB/ RTX3060 6GB/ DOS (RUSSIAN)",
     "imgs": [
       "https://assets.asaxiy.uz/product/main_image/desktop//63a007b604cc5.jpg.webp"
@@ -385,7 +385,7 @@
     "new": true
   },
   {
-    "id": 12,
+    "id": "n12",
     "title": "Dell Vostro 3400. Core i5-1135G7. DDR4 8GB. SSD 256GB + HDD 1000GB. 14\" Noutbuki",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/6512bd43d9caa6e02c990b0a82652dca2022070611355765209osSjU0wjbI.jpeg.webp",
@@ -422,7 +422,7 @@
     "new": false
   },
   {
-    "id": 13,
+    "id": "n13",
     "title": "Acer A515-45-R03P Ryzen R5-5500U, DDR4 8GB, SSD 512Gb, 15.6\" FullHD, Backlight, Fingerprint, Win 11. Noutbuki",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/a95dcb8aebb202efeedb10d5538edeb92022112700210370985JZWlTaxNYF.jpg.webp"
@@ -456,7 +456,7 @@
     "new": false
   },
   {
-    "id": 14,
+    "id": "n14",
     "title": "HP 15S-FQ5006NIA. Core I5-1235U. DDR4 8GB. SSD 256GB. 15.6\"HD Noutbuk",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/357aa502337776a7f8cbff80aa6e346c2022111919105892654OTejJ1c3QZ.png.webp",
@@ -492,7 +492,7 @@
     "new": false
   },
   {
-    "id": 15,
+    "id": "n15",
     "title": "Lenovo Legion 5 15IMH6. Core I5-10500H. DDR4 8GB. SSD 256 GB. GeForce RTX 3050. 15.6\" Full HD IPS. RU KB. Phanton black Noutbuki",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/171b6bf0598a853c7b2234350e8555162022122013445884179XFTXfdQ47C.jpg.webp",
@@ -528,7 +528,7 @@
     "new": true
   },
   {
-    "id": 16,
+    "id": "n16",
     "title": "Ноутбук DELL XPS 15 9500 / Core i5-10300H / DDR4 8GB / SSD 512GB / 15.6\" (1920x1200) / Win 10",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/b706835de79a2b4e80506f582af3676a2021102818164982762ek7Lc61j9D.jpg.webp"
@@ -562,7 +562,7 @@
     "new": false
   },
   {
-    "id": 17,
+    "id": "n17",
     "title": "Apple MacBook Pro 13 M1 8GB/256GB noutbuki",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/5345ac1215be606bf5f7596768a0aa0b2020112413095217512sUljhBbRDa.jpg.webp",
@@ -598,7 +598,7 @@
     "new": false
   },
   {
-    "id": 18,
+    "id": "n18",
     "title": "Apple MacBook Pro 16 with Retina display and Touch Bar Late Core i9 16/1 TB 2019 (Gray, Silver) noutbuki",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/5e742bc2362be674245265d2a4a925272021112718090482576g2JDTewFej.jpg.webp",
@@ -633,7 +633,7 @@
     "new": false
   },
   {
-    "id": 19,
+    "id": "n19",
     "title": "Lenovo IdeaPad Gaming 3 15IHU6 / Intel i5-11300H / DDR4 16GB / SSD 512GB / NVIDIA GeForce RTX 3050/ 15.6\" FHD",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/c4ca4238a0b923820dcc509a6f75849b20201228102720953919zBbrSfBde.jpg.webp",
@@ -668,7 +668,7 @@
     "new": true
   },
   {
-    "id": 20,
+    "id": "n20",
     "title": "ASUS ZenBook 14 UX434FQ-A5058T. Core i5-10210U. DDR3 8GB. SSD 512GB . MX250 2GB .14\" Cicle Silver Noutbuki",
     "imgs": [
       "https://assets.asaxiy.uz/product/items/desktop/5232079569fa837a22bf0f7a3981907c2022112816170254254OkFYZctLR2.jpg.webp",
