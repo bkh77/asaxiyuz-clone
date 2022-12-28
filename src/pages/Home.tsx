@@ -1,7 +1,6 @@
 import Banner from '../components/home/Banner'
 import Books from '../components/home/Books'
 import Card from '../components/home/Card'
-import Pagination from '../components/home/Pagination'
 import Sections from '../components/home/Sections'
 import data from '../data/products.json'
 
@@ -61,9 +60,27 @@ export default function Home() {
                 <Card key={product.id} id={product.id} />
               ))}
           </div>
-
-          <Pagination />
         </div>
+      </div>
+
+      <div className="mt-12 rounded-3xl bg-white p-6">
+        <h1 className="text-black ">Asaxiy kompaniyasi haqida</h1>
+
+        <p>
+          Butun O‘zbekiston bo‘ylab maishiy texnika va elektronika tovarlarini
+          yetkazib beruvchi kompaniyamizning asosiy afzalligi – ko‘p yillik ish
+          tajribasi va yaxshi nom qozonib ulgurganidir. Asos solinganidan buyon
+          Asaxiy internet-do‘koni va uning jamoasi iste’mol bozorining talablari
+          tendensiyalarini tinimsiz kuzatib kelmoqda; bu esa bizga eng so‘nggi
+          texnologiyalar va innovatsion yechimlardan hamisha boxabar bo‘lib
+          turish imkonini beradi.
+        </p>
+
+        <p className='mt-8' >
+          "Asaxiy Books" MCHJ <br /> Ro'yxatdan o'tish raqami: 646439 <br />{' '}
+          INN: 305829008 <br />
+          MCHJ rahbari: Allayev Firuz Abdunasimovich
+        </p>
       </div>
     </div>
   )
