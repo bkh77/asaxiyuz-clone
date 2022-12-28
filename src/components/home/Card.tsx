@@ -5,14 +5,13 @@ import { FaRegHeart, FaShoppingCart, FaStar } from 'react-icons/fa'
 import { BiComment } from 'react-icons/bi'
 import data from '../../data/products.json'
 
-export default function Card({ id }: { id: number }) {
+export default function Card({ id }: { id: string }) {
   const product = data.find((item) => item.id === id)
   if (product == null) return null
 
-
   return (
     <div className="relative overflow-hidden rounded-3xl bg-white p-4 shadow-3xl transition duration-200 hover:text-blue">
-      <Link to={'#'}>
+      <Link to={`/product/${id}`}>
         <div className="h-40">
           <img
             className="h-full w-full object-contain"
@@ -54,10 +53,10 @@ export default function Card({ id }: { id: number }) {
       </Link>
 
       <div className="flex items-center justify-between space-x-2">
-        <Button color="green" className="w-1/3 truncate px-1 text-[8px]">
+        <Button color="green" className="w-1/3 truncate px-1 py-2 text-[8px]">
           Rasrochka
         </Button>
-        <Button color="primary" className="w-2/3 truncate px-1 text-[8px]">
+        <Button color="primary" className="w-2/3 truncate px-1 py-2 text-[8px]">
           Bir klikda olish
         </Button>
       </div>
