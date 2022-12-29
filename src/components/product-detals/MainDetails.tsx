@@ -42,7 +42,7 @@ export default function MainDetails({ id }: { id: string | undefined }) {
         ))}
       </div>
 
-      <div className="relative md:w-[470px] overflow-hidden rounded-3xl bg-white p-4 shadow-3xl">
+      <div className="relative overflow-hidden rounded-3xl bg-white p-4 shadow-3xl md:w-[470px]">
         <Swiper
           modules={[Navigation, A11y]}
           spaceBetween={50}

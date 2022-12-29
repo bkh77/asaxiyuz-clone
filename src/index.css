@@ -72,3 +72,20 @@ input::-webkit-inner-spin-button {
 ::-webkit-scrollbar-thumb:hover {
   background: #0065b8;
 }
+
+.product-features > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 8px;
+  border-radius: 4px;
+}
+
+.product-features > div:nth-child(even) {
+  background: #f1f1f1;
+}
+.product-features > div:nth-child(odd) {
+  background: #fff;
+}
+.product-features > div span {
+  text-align: right;
+}
