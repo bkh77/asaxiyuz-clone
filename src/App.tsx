@@ -7,7 +7,7 @@ import News from './pages/News'
 import OrderPay from './pages/OrderPay'
 import OrderStatus from './pages/OrderStatus'
 import { MainContextProvider } from './context/MainContext'
-import ProductDeatils from './pages/ProductDeatils'
+import ProductDetails from './pages/ProductDetails'
 
 function App() {
   return (
@@ -19,8 +19,7 @@ function App() {
           <Route path="/order-pay" element={<OrderPay />} />
           <Route path="/order-status" element={<OrderStatus />} />
           <Route path="/favourites" element={<Favourites />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/product/:id" element={<ProductDeatils />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
       </main>
       <Footer />

@@ -1,15 +1,17 @@
-import { useParams } from 'react-router-dom'
-import data from '../data/products.json'
 import { MdKeyboardArrowRight } from 'react-icons/md'
+import { useParams } from 'react-router-dom'
 import MainDetails from '../components/product-detals/MainDetails'
+import Features from '../components/product-detals/Features'
+import data from '../data/products.json'
 
-export default function ProductDeatils() {
+export default function ProductDetails() {
   const { id } = useParams()
   const product = data.find((item) => item.id === id)
+
   if (product == null) return null
 
   return (
-    <div className="px-4 my-8">
+    <div className="my-8 px-4">
       <div className="flex flex-wrap items-center  text-xs font-bold text-gray-dark">
         <span>Bosh sahifa </span>
         <MdKeyboardArrowRight className="h-4 w-4" />
@@ -25,6 +27,23 @@ export default function ProductDeatils() {
       </div>
 
       <MainDetails id={id} />
+
+      <div className="mt-12 rounded-3xl bg-white p-6">
+        <h2 className="mb-6 text-2xl font-medium">Mahsulot ta'rifi</h2>
+
+        <p>{product.description}</p>
+      </div>
+
+      <Features id={id} />
+
+      <div className="mt-10 rounded-3xl bg-white p-6">
+        <h2 className="mb-2 text-2xl font-medium">Sharhlar</h2>
+        <div className="border-b-2 border-gray-light"></div>
+
+        <p className="mt-6  cursor-pointer font-medium underline">
+          Sharh qoldirish
+        </p>
+      </div>
     </div>
   )
 }
