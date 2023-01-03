@@ -28,6 +28,7 @@ module.exports = {
       'red-price': '#d9663b',
       'orange-dark': '#cf6610',
       'green-dark': '#008f69',
+      cart: 'rgba(223, 241, 255, 0.44)',
     },
   },
   plugins: [],

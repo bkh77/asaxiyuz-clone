@@ -1,11 +1,14 @@
 import Button from '../form/Button'
+import data from '../../data/products.json'
 import { currencyFormat } from '../../utils/currencyFomat'
 import { Link } from 'react-router-dom'
 import { FaRegHeart, FaShoppingCart, FaStar } from 'react-icons/fa'
 import { BiComment } from 'react-icons/bi'
-import data from '../../data/products.json'
+import { useMainContext } from '../../context/MainContext'
 
 export default function Card({ id }: { id: string }) {
+  const { addToCart } = useMainContext()
+
   const product = data.find((item) => item.id === id)
   if (product == null) return null
 
@@ -73,15 +76,19 @@ export default function Card({ id }: { id: string }) {
           </span>
         )}
       </div>
-      <span
-        title="Savatchaga qo'shish"
-        className="absolute top-4 right-4 cursor-pointer rounded-lg bg-blue p-2 text-xs  text-white"
-      >
-        <FaShoppingCart className="h-4 w-4" />
-      </span>
+      <div className="absolute top-4 right-4">
+        <Button
+          onClick={() => addToCart(id)}
+          title="Savatchaga qo'shish"
+          color="primary"
+          className="p-2"
+        >
+          <FaShoppingCart className="h-4 w-4" />
+        </Button>
+      </div>
       <span
         title="Sevimlilarga qo'shish"
-        className="bg-transparent absolute top-14 right-3 cursor-pointer p-1 text-xs  text-gray-light"
+        className="bg-transparent absolute top-14 right-3 cursor-pointer p-1 text-xs text-gray-light transition  hover:text-blue"
       >
         <FaRegHeart className="h-7 w-7" />
       </span>

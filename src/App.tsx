@@ -8,6 +8,7 @@ import OrderPay from './pages/OrderPay'
 import OrderStatus from './pages/OrderStatus'
 import { MainContextProvider } from './context/MainContext'
 import ProductDetails from './pages/ProductDetails'
+import Cart from './pages/Cart'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/order-pay" element={<OrderPay />} />
           <Route path="/order-status" element={<OrderStatus />} />
           <Route path="/favourites" element={<Favourites />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
       </main>

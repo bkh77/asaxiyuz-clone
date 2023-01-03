@@ -11,7 +11,8 @@ const theme = {
   green: 'bg-green before:bg-green-dark/50 text-white',
   'orange-outline':
     'bg-white before:bg-orange-dark/50 border border-orange text-orange hover:bg-orange hover:text-white',
-  'primary-outline': 'bg-white before:bg-blue-darker/50',
+  'primary-outline':
+    'before:bg-blue-dark/50 border border-blue text-blue hover:bg-blue hover:text-white',
 }
 
 export default function Button({

@@ -11,12 +11,15 @@ import { Link } from 'react-router-dom'
 import { FaAngleDown } from 'react-icons/fa'
 import { useState } from 'react'
 import { useMainContext } from '../../context/MainContext'
+import CartModal from '../cart/CartModal'
 
 export default function Navbar() {
   const [langSelect, setLangSelect] = useState(false)
   const [lang, setLang] = useState("O'zbekcha")
+  const [isOpenCartModal, setIsOpenCartModal] = useState(false)
 
-  const { openModal } = useMainContext()
+  const { openModal, cartItems } = useMainContext()
+
   return (
     <div className="hidden bg-white shadow-3xl lg:block">
       <nav className="mx-auto flex max-w-[1336px] items-center justify-between space-x-10 border-b border-gray  p-6">
@@ -79,13 +82,20 @@ export default function Navbar() {
               </div>
             )}
           </div>
-          <div className="relative flex cursor-pointer  flex-col items-center text-sm hover:text-blue">
+
+          <div
+            onMouseEnter={() => setIsOpenCartModal(true)}
+            onMouseLeave={() => setIsOpenCartModal(false)}
+            className="relative flex cursor-pointer  flex-col items-center text-sm"
+          >
             <img className="h-7 w-7" src={cart} alt="cart logo" />
-            <span>Savatcha</span>
+            <span className="hover:text-blue">Savatcha</span>
             <div className="absolute right-2 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-blue  text-white">
-              5
+              {cartItems.length}
             </div>
+            <CartModal isOpenCartModal={isOpenCartModal} />
           </div>
+
           <Link
             to="/favourites"
             className="relative flex cursor-pointer  flex-col items-center text-sm hover:text-blue "
