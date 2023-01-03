@@ -1,5 +1,5 @@
 import { MdKeyboardArrowRight } from 'react-icons/md'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import MainDetails from '../components/product-detals/MainDetails'
 import Features from '../components/product-detals/Features'
 import data from '../data/products.json'
@@ -13,7 +13,9 @@ export default function ProductDetails() {
   return (
     <div className="my-8 px-4">
       <div className="flex flex-wrap items-center  text-xs font-bold text-gray-dark">
-        <span>Bosh sahifa </span>
+        <Link to={'/'} className="text-blue">
+          Bosh sahifa
+        </Link>
         <MdKeyboardArrowRight className="h-4 w-4" />
         <span>Mahsulotlar</span>
         <MdKeyboardArrowRight className="h-4 w-4" />

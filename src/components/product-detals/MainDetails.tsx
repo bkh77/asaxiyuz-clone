@@ -17,6 +17,7 @@ import {
 
 import 'swiper/css'
 import 'swiper/css/navigation'
+import { useMainContext } from '../../context/MainContext'
 
 const socials = [
   { color: 'bg-[#385395]', icon: <FaFacebookF /> },
@@ -26,6 +27,8 @@ const socials = [
 ]
 
 export default function MainDetails({ id }: { id: string | undefined }) {
+  const { addToCart } = useMainContext()
+
   const product = data.find((item) => item.id === id)
   if (product == null) return null
 
@@ -123,7 +126,11 @@ export default function MainDetails({ id }: { id: string | undefined }) {
           <Button className="px-4 py-4 max-sm:w-full sm:w-1/4" color="primary">
             Muddatli to'lov
           </Button>
-          <Button className="px-4 py-4 max-sm:w-full sm:w-2/4" color="orange">
+          <Button
+            onClick={() => addToCart(product.id)}
+            className="px-4 py-4 max-sm:w-full sm:w-2/4"
+            color="orange"
+          >
             <FaCartPlus className="inline h-5 w-5" /> Savatchaga qo'shish
           </Button>
           <Button
