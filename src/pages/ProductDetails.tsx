@@ -1,5 +1,6 @@
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import { Link, useParams } from 'react-router-dom'
+import { useEffect } from 'react'
 import MainDetails from '../components/product-detals/MainDetails'
 import Features from '../components/product-detals/Features'
 import data from '../data/products.json'
@@ -7,6 +8,10 @@ import data from '../data/products.json'
 export default function ProductDetails() {
   const { id } = useParams()
   const product = data.find((item) => item.id === id)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   if (product == null) return null
 

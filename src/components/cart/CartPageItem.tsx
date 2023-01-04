@@ -3,6 +3,7 @@ import { CartItems, useMainContext } from '../../context/MainContext'
 import { currencyFormat } from '../../utils/currencyFomat'
 import { Link } from 'react-router-dom'
 import data from '../../data/products.json'
+import Badge from '../favourites/Badge'
 
 type CartPageItemProps = {
   isStandart: boolean
@@ -28,16 +29,15 @@ export default function CartPageItem({
       />
 
       <div className="flex flex-col items-center max-sm:space-y-4 sm:space-x-4 lg:flex-row">
-        <div className="space-y-4">
+        <div className="space-y-2">
           <Link
             to={`/product/${product.id}`}
+            style={{ height: '45px' }}
             className="my-truncate font-medium transition hover:text-blue max-lg:text-sm"
           >
             {product.title}
           </Link>
-          <p className="inline-block cursor-pointer rounded-lg bg-blue px-2 py-1 text-sm text-white transition hover:bg-blue-darker">
-            {product.brend}
-          </p>
+          <Badge>{product.brend}</Badge>
         </div>
 
         <div className="flex max-sm:flex-col max-sm:space-y-4  sm:items-center sm:space-x-12 ">

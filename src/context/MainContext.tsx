@@ -13,11 +13,18 @@ type MainContext = {
   cartItems: CartItems[]
   increaseCartQuantity: (id: string) => void
   decreaseCartQuantity: (id: string) => void
+  favItems: FavItems[]
+  addToFav: (id: string) => void
+  removeFromFav: (id: string) => void
 }
 
 export type CartItems = {
   id: string
   quantity: number
+}
+
+export type FavItems = {
+  id: string
 }
 
 const MainContext = createContext({} as MainContext)
@@ -33,8 +40,26 @@ export function MainContextProvider({ children }: MainContextProviderProps) {
     []
   )
 
+  const [favItems, setFavItems] = useLocalStorage<FavItems[]>('favourites', [])
+
   const openModal = () => setIsOpenModal(true)
   const closeModal = () => setIsOpenModal(false)
+
+  function addToFav(id: string) {
+    setFavItems((currItems) => {
+      if (!currItems.some((item) => item.id === id)) {
+        return [...currItems, { id }]
+      } else {
+        return currItems
+      }
+    })
+  }
+
+  function removeFromFav(id: string) {
+    setFavItems((currItems) => {
+      return currItems.filter((item) => item.id !== id)
+    })
+  }
 
   function addToCart(id: string) {
     setCartItems((currItems) => {
@@ -93,6 +118,9 @@ export function MainContextProvider({ children }: MainContextProviderProps) {
         cartItems,
         increaseCartQuantity,
         decreaseCartQuantity,
+        addToFav,
+        favItems,
+        removeFromFav,
       }}
     >
       {children}

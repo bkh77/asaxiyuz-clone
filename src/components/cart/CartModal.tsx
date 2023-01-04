@@ -15,8 +15,8 @@ export default function CartModal({ isOpenCartModal }: CartModalProps) {
     <div
       className={`absolute top-12 right-0 z-10 w-96  overflow-hidden rounded-3xl bg-white shadow-3xl transition-all duration-300 ${
         isOpenCartModal
-          ? 'visible rotate-0 scale-100'
-          : 'invisible origin-top-right -rotate-45 scale-0'
+          ? 'visible origin-top-right scale-100'
+          : 'invisible origin-top-right scale-0'
       }`}
     >
       <div className="bg-white px-2 py-4">
@@ -42,7 +42,10 @@ export default function CartModal({ isOpenCartModal }: CartModalProps) {
             sotib olish
           </Button>
           <Link to="/cart">
-            <Button className="w-full py-4 uppercase" color="primary-outline">
+            <Button
+              className="w-full py-4 font-medium uppercase"
+              color="primary-outline"
+            >
               savatga o'tish
             </Button>
           </Link>
