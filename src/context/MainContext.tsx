@@ -1,4 +1,5 @@
 import { ReactNode, createContext, useContext, useState } from 'react'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 import Modal from '../components/kabinet/Modal'
 
 type MainContextProviderProps = {
@@ -10,6 +11,8 @@ type MainContext = {
   addToCart: (id: string) => void
   removeFromCart: (id: string) => void
   cartItems: CartItems[]
+  increaseCartQuantity: (id: string) => void
+  decreaseCartQuantity: (id: string) => void
 }
 
 export type CartItems = {
@@ -25,7 +28,10 @@ export function useMainContext() {
 
 export function MainContextProvider({ children }: MainContextProviderProps) {
   const [isOpenModal, setIsOpenModal] = useState(false)
-  const [cartItems, setCartItems] = useState<CartItems[]>([])
+  const [cartItems, setCartItems] = useLocalStorage<CartItems[]>(
+    'shopping-cart',
+    []
+  )
 
   const openModal = () => setIsOpenModal(true)
   const closeModal = () => setIsOpenModal(false)
@@ -46,9 +52,48 @@ export function MainContextProvider({ children }: MainContextProviderProps) {
     })
   }
 
+  function increaseCartQuantity(id: string) {
+    setCartItems((currItems) => {
+      if (currItems.find((item) => item.id === id) == null) {
+        return [...currItems, { id, quantity: 1 }]
+      } else {
+        return currItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity + 1 }
+          } else {
+            return item
+          }
+        })
+      }
+    })
+  }
+
+  function decreaseCartQuantity(id: string) {
+    setCartItems((currItems) => {
+      if (currItems.find((item) => item.id === id)?.quantity === 1) {
+        return currItems
+      } else {
+        return currItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity - 1 }
+          } else {
+            return item
+          }
+        })
+      }
+    })
+  }
+
   return (
     <MainContext.Provider
-      value={{ openModal, addToCart, removeFromCart, cartItems }}
+      value={{
+        openModal,
+        addToCart,
+        removeFromCart,
+        cartItems,
+        increaseCartQuantity,
+        decreaseCartQuantity,
+      }}
     >
       {children}
       <Modal isOpenModal={isOpenModal} closeModal={closeModal} />

@@ -46,14 +46,14 @@ export default function Cart() {
         </button>
       </div>
 
-      <div className="mt-6 flex max-md:space-y-8 md:space-x-6 max-md:flex-col">
+      <div className="mt-6 flex max-md:flex-col max-md:space-y-8 md:space-x-6">
         <div className="w-3/4 space-y-8 max-md:w-full">
           {cartItems.map((item) => (
             <CartPageItem key={item.id} isStandart={isStandart} {...item} />
           ))}
         </div>
         <div className="w-1/4 max-md:w-full">
-          <div className="rounded-3xl bg-white shadow-3xl">
+          <div className="sticky top-0 rounded-3xl bg-white shadow-3xl">
             <div className="space-y-3 border-b border-gray-light p-6 text-center font-medium">
               <p className="text-blue ">
                 Savatdagi mahsulotlar soni: <span>{cartItems.length}</span>

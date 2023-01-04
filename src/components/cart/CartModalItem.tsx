@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
-import data from '../../data/products.json'
-import { currencyFormat } from '../../utils/currencyFomat'
-import { FiX } from 'react-icons/fi'
 import { CartItems, useMainContext } from '../../context/MainContext'
+import { currencyFormat } from '../../utils/currencyFomat'
+import { Link } from 'react-router-dom'
+import { FiX } from 'react-icons/fi'
+import data from '../../data/products.json'
 
 export default function CartModalItem({ id, quantity }: CartItems) {
   const { removeFromCart } = useMainContext()
@@ -21,7 +21,6 @@ export default function CartModalItem({ id, quantity }: CartItems) {
       </Link>
       <div>
         <p>{currencyFormat(product.price)}</p>
-        <p className="text-right text-gray-light">x{quantity}</p>
       </div>
       <div>
         <FiX
