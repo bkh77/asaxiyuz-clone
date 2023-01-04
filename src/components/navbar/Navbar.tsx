@@ -15,10 +15,10 @@ import CartModal from '../cart/CartModal'
 
 export default function Navbar() {
   const [langSelect, setLangSelect] = useState(false)
-  const [lang, setLang] = useState("O'zbekcha")
+  const [currLang, setCurrLang] = useState("O'zbekcha")
   const [isOpenCartModal, setIsOpenCartModal] = useState(false)
 
-  const { openModal, cartItems } = useMainContext()
+  const { openModal, cartItems, favItems } = useMainContext()
 
   return (
     <div className="hidden bg-white shadow-3xl lg:block">
@@ -29,7 +29,7 @@ export default function Navbar() {
 
         <SearchInput />
 
-        <div className="flex space-x-8">
+        <div className="flex items-center space-x-8">
           <Link
             to="/order-pay"
             className="flex cursor-pointer flex-col  items-center text-sm hover:text-blue"
@@ -44,43 +44,39 @@ export default function Navbar() {
             <img className="h-8 w-8" src={tracker} alt="tracker logo" />
             <span>Trek</span>
           </Link>
-          <div className="relative">
-            <div
-              onClick={() => setLangSelect((prev) => !prev)}
-              className="flex cursor-pointer flex-col  items-center text-sm hover:text-blue"
-            >
-              <img
-                className="mt-1 h-7 w-7"
-                src={language}
-                alt="language logo"
-              />
+          <div
+            onMouseEnter={() => setLangSelect(true)}
+            onMouseLeave={() => setLangSelect(false)}
+            className="relative"
+          >
+            <div className="flex cursor-pointer flex-col  items-center text-sm hover:text-blue">
+              <img className="h-7 w-7" src={language} alt="language logo" />
 
-              <span>
-                {lang} <FaAngleDown className="inline h-4 w-4" />
+              <span className="mt-1">
+                {currLang} <FaAngleDown className="inline h-4 w-4" />
               </span>
             </div>
-            {langSelect && (
-              <div className="absolute -left-4  flex h-24 w-28 flex-col space-y-3 rounded-xl bg-white p-6 text-sm shadow-xl">
+
+            <div
+              className={`absolute -left-4  flex h-24 w-28 flex-col space-y-3 rounded-xl bg-white p-6 text-sm shadow-xl transition-all duration-300 ${
+                langSelect
+                  ? 'visible origin-top scale-y-100'
+                  : 'invisible origin-top scale-0 '
+              }`}
+            >
+              {["O'zbekcha", 'Русский'].map((lang) => (
                 <span
+                  key={lang}
                   onClick={() => {
-                    setLang("O'zbekcha")
-                    setLangSelect((prev) => !prev)
+                    setCurrLang(lang)
+                    setLangSelect(false)
                   }}
                   className="cursor-pointer hover:text-blue"
                 >
-                  O'zbekcha
+                  {lang}
                 </span>
-                <span
-                  onClick={() => {
-                    setLang('Русский')
-                    setLangSelect((prev) => !prev)
-                  }}
-                  className="cursor-pointer hover:text-blue"
-                >
-                  Русский
-                </span>
-              </div>
-            )}
+              ))}
+            </div>
           </div>
 
           <div
@@ -103,7 +99,7 @@ export default function Navbar() {
             <img className="h-7 w-7" src={heart} alt="heart logo" />
             <span>Sevimlilar</span>
             <div className="absolute right-2 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-blue  text-white">
-              3
+              {favItems.length}
             </div>
           </Link>
           <div

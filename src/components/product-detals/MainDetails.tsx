@@ -27,7 +27,7 @@ const socials = [
 ]
 
 export default function MainDetails({ id }: { id: string | undefined }) {
-  const { addToCart } = useMainContext()
+  const { addToCart, addToFav } = useMainContext()
 
   const product = data.find((item) => item.id === id)
   if (product == null) return null
@@ -64,7 +64,11 @@ export default function MainDetails({ id }: { id: string | undefined }) {
         </Swiper>
 
         <div className="absolute top-4 right-4 z-10">
-          <Button color="primary" className="px-2 py-2">
+          <Button
+            onClick={() => addToFav(product.id)}
+            color="primary"
+            className="px-2 py-2 active:scale-90"
+          >
             <FaRegHeart className="h-6 w-6" />
           </Button>
         </div>

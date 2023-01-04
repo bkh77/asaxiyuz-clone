@@ -7,7 +7,7 @@ import { BiComment } from 'react-icons/bi'
 import { useMainContext } from '../../context/MainContext'
 
 export default function Card({ id }: { id: string }) {
-  const { addToCart } = useMainContext()
+  const { addToCart, addToFav } = useMainContext()
 
   const product = data.find((item) => item.id === id)
   if (product == null) return null
@@ -81,14 +81,15 @@ export default function Card({ id }: { id: string }) {
           onClick={() => addToCart(id)}
           title="Savatchaga qo'shish"
           color="primary"
-          className="p-2"
+          className="p-2 active:scale-90"
         >
           <FaShoppingCart className="h-4 w-4" />
         </Button>
       </div>
       <span
+        onClick={() => addToFav(product.id)}
         title="Sevimlilarga qo'shish"
-        className="bg-transparent absolute top-14 right-3 cursor-pointer p-1 text-xs text-gray-light transition  hover:text-blue"
+        className="bg-transparent absolute top-14 right-3 cursor-pointer p-1 text-xs text-gray-light transition  hover:text-blue active:scale-90"
       >
         <FaRegHeart className="h-7 w-7" />
       </span>

@@ -22,7 +22,10 @@ export default function Button({
   ...rest
 }: ButtonProps) {
   return (
-    <button className={`btn ${theme[color]} ${className}`} {...rest}>
+    <button
+      className={`btn ${theme[color]} ${className}`}
+      {...rest}
+    >
       {children}
     </button>
   )
