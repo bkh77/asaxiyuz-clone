@@ -1,9 +1,9 @@
 import { currencyFormat } from '../../utils/currencyFomat'
 import { useMainContext } from '../../context/MainContext'
-import Button from '../form/Button'
-import CartModalItem from './CartModalItem'
-import data from '../../data/products.json'
 import { Link } from 'react-router-dom'
+import CartModalItem from './CartModalItem'
+import Button from '../form/Button'
+import data from '../../data/products.json'
 
 type CartModalProps = {
   isOpenCartModal: boolean
@@ -13,10 +13,10 @@ export default function CartModal({ isOpenCartModal }: CartModalProps) {
   const { cartItems } = useMainContext()
   return (
     <div
-      className={`absolute top-12 right-0 z-10  overflow-hidden rounded-3xl bg-white shadow-3xl transition-all duration-300 ${
+      className={`absolute top-12 right-0 z-10 w-96  overflow-hidden rounded-3xl bg-white shadow-3xl transition-all duration-300 ${
         isOpenCartModal
-          ? 'visible w-96 opacity-100'
-          : 'invisible h-0 w-0 opacity-0'
+          ? 'visible rotate-0 scale-100'
+          : 'invisible origin-top-right -rotate-45 scale-0'
       }`}
     >
       <div className="bg-white px-2 py-4">

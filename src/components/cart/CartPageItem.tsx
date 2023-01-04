@@ -1,8 +1,9 @@
 import { FaTrashAlt } from 'react-icons/fa'
-import { CartItems } from '../../context/MainContext'
-import data from '../../data/products.json'
+import { CartItems, useMainContext } from '../../context/MainContext'
 import { currencyFormat } from '../../utils/currencyFomat'
 import { Link } from 'react-router-dom'
+import data from '../../data/products.json'
+
 type CartPageItemProps = {
   isStandart: boolean
 } & CartItems
@@ -12,6 +13,9 @@ export default function CartPageItem({
   id,
   quantity,
 }: CartPageItemProps) {
+  const { increaseCartQuantity, decreaseCartQuantity, removeFromCart } =
+    useMainContext()
+
   const product = data.find((item) => item.id === id)
   if (product == null) return null
 
@@ -23,7 +27,7 @@ export default function CartPageItem({
         alt={product.brend}
       />
 
-      <div className="flex flex-col items-center space-x-4 lg:flex-row">
+      <div className="flex flex-col items-center max-sm:space-y-4 sm:space-x-4 lg:flex-row">
         <div className="space-y-4">
           <Link
             to={`/product/${product.id}`}
@@ -36,13 +40,19 @@ export default function CartPageItem({
           </p>
         </div>
 
-        <div className="flex items-center space-x-12 ">
+        <div className="flex max-sm:flex-col max-sm:space-y-4  sm:items-center sm:space-x-12 ">
           <div className="flex h-6 w-32 items-center justify-between overflow-hidden rounded-md bg-white ">
-            <button className="h-full w-8 bg-blue  text-white transition hover:bg-blue-darker">
+            <button
+              onClick={() => decreaseCartQuantity(product.id)}
+              className="h-full w-8 bg-blue  text-white transition hover:bg-blue-darker"
+            >
               -
             </button>
-            <span>1</span>
-            <button className="h-full w-8 bg-blue text-white  transition hover:bg-blue-darker">
+            <span>{quantity}</span>
+            <button
+              onClick={() => increaseCartQuantity(product.id)}
+              className="h-full w-8 bg-blue text-white  transition hover:bg-blue-darker"
+            >
               +
             </button>
           </div>
@@ -58,13 +68,16 @@ export default function CartPageItem({
 
             <p className="font-medium">{currencyFormat(product?.price)}</p>
             {!isStandart && (
-              <p className="text-mg my-1 text-blue">
+              <p className="my-1 font-bold text-blue">
                 {currencyFormat(product.installment)} /{' '}
                 {product.installmentMonth} oy
               </p>
             )}
 
-            <span className="cursor-pointer  text-sm font-medium text-orange">
+            <span
+              onClick={() => removeFromCart(product.id)}
+              className="cursor-pointer  text-sm font-medium text-orange"
+            >
               <FaTrashAlt className="mr-2 inline h-3 w-3" /> O'chirish
             </span>
           </div>
