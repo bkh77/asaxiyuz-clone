@@ -1,4 +1,11 @@
-import { ReactNode, createContext, useContext, useState } from 'react'
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useState,
+  Dispatch,
+  SetStateAction,
+} from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 import Modal from '../components/kabinet/Modal'
 
@@ -16,6 +23,8 @@ type MainContext = {
   favItems: FavItems[]
   addToFav: (id: string) => void
   removeFromFav: (id: string) => void
+  isOpenMenu: boolean
+  setIsOpenMenu: Dispatch<SetStateAction<boolean>>
 }
 
 export type CartItems = {
@@ -39,6 +48,7 @@ export function MainContextProvider({ children }: MainContextProviderProps) {
     'shopping-cart',
     []
   )
+  const [isOpenMenu, setIsOpenMenu] = useState(false)
 
   const [favItems, setFavItems] = useLocalStorage<FavItems[]>('favourites', [])
 
@@ -121,6 +131,8 @@ export function MainContextProvider({ children }: MainContextProviderProps) {
         addToFav,
         favItems,
         removeFromFav,
+        isOpenMenu,
+        setIsOpenMenu,
       }}
     >
       {children}
