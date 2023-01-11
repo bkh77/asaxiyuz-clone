@@ -3,18 +3,18 @@ import Footer from './components/footer/Index'
 import Navbar from './components/navbar/Navbar'
 import Favourites from './pages/Favourites'
 import Home from './pages/Home'
-import News from './pages/News'
 import OrderPay from './pages/OrderPay'
 import OrderStatus from './pages/OrderStatus'
 import { MainContextProvider } from './context/MainContext'
 import ProductDetails from './pages/ProductDetails'
 import Cart from './pages/Cart'
+import MenuSections from './components/menu-sections/MenuSections'
 
 function App() {
   return (
     <MainContextProvider>
       <Navbar />
-      <main className="mx-auto max-w-[1336px] ">
+      <main className="mx-auto max-w-[1336px] relative">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/order-pay" element={<OrderPay />} />
@@ -23,6 +23,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
+        <MenuSections />
       </main>
       <Footer />
     </MainContextProvider>

@@ -13,7 +13,7 @@ export default function CartModal({ isOpenCartModal }: CartModalProps) {
   const { cartItems } = useMainContext()
   return (
     <div
-      className={`absolute top-12 right-0 z-10 w-96  overflow-hidden rounded-3xl bg-white shadow-3xl transition-all duration-300 ${
+      className={`absolute top-12 right-0 z-50 w-96  overflow-hidden rounded-3xl bg-white shadow-3xl transition-all duration-300 ${
         isOpenCartModal
           ? 'visible origin-top-right scale-100'
           : 'invisible origin-top-right scale-0'
