@@ -1,7 +1,7 @@
 import Button from '../form/Button'
 import data from '../../data/products.json'
 import { Navigation, A11y } from 'swiper'
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { currencyFormat } from '../../utils/currencyFomat'
 import { BiComment } from 'react-icons/bi'
 
