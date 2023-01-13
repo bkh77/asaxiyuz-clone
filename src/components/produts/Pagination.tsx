@@ -4,7 +4,7 @@ import { RxDoubleArrowLeft, RxDoubleArrowRight } from 'react-icons/rx'
 export default function Pagination() {
   const [isActive, setIsActive] = useState(1)
   return (
-    <div className="mt-6 flex flex-row justify-end space-x-2 text-sm font-medium text-blue">
+    <div className="my-6 flex flex-row justify-end space-x-2 text-sm font-medium text-blue">
       {[<RxDoubleArrowLeft />, 1, 2, 3, 4, 5, <RxDoubleArrowRight />].map(
         (item, index) => (
           <div
