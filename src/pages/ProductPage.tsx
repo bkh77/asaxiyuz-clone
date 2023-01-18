@@ -11,7 +11,7 @@ import LaptopTips from '../components/produts/LaptopTips'
 export default function ProductPage() {
   return (
     <div className="my-8 px-4">
-      <div className="flex flex-wrap items-center  text-xs font-bold text-gray-dark">
+      <div className="flex flex-wrap items-center  text-xs font-bold text-gray-dark ">
         <Link to={'/'} className="text-blue">
           Bosh sahifa
         </Link>
@@ -26,7 +26,7 @@ export default function ProductPage() {
       </div>
 
       <div className="mt-8 flex space-x-8">
-        <div className="w-1/4">
+        <div className="hidden w-1/4 lg:block">
           <FilterList
             title="Ishlab chiqaruvchi"
             items={[
@@ -78,7 +78,7 @@ export default function ProductPage() {
           />
         </div>
 
-        <div className="w-3/4">
+        <div className="lg:w-3/4">
           <div className="mb-6 flex flex-wrap items-center justify-between">
             <h2 className="text-xl font-semibold">Noutbuklar</h2>
 
