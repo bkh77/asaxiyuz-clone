@@ -10,11 +10,15 @@ import ProductDetails from './pages/ProductDetails'
 import Cart from './pages/Cart'
 import MenuSections from './components/menu-sections/MenuSections'
 import ProductPage from './pages/ProductPage'
+import MobileNavbar from './components/navbar/MobileNavbar'
+import MobileSidebar from './components/navbar/MobileSidebar'
 
 function App() {
   return (
     <MainContextProvider>
       <Navbar />
+      <MobileNavbar />
+      <MobileSidebar />
       <main className="relative mx-auto max-w-[1336px]">
         <Routes>
           <Route path="/" element={<Home />} />
