@@ -25,6 +25,8 @@ type MainContext = {
   removeFromFav: (id: string) => void
   isOpenMenu: boolean
   setIsOpenMenu: Dispatch<SetStateAction<boolean>>
+  isOpenSidebar: boolean
+  setIsOpenSidebar: Dispatch<SetStateAction<boolean>>
 }
 
 export type CartItems = {
@@ -44,6 +46,7 @@ export function useMainContext() {
 
 export function MainContextProvider({ children }: MainContextProviderProps) {
   const [isOpenModal, setIsOpenModal] = useState(false)
+  const [isOpenSidebar, setIsOpenSidebar] = useState(false)
   const [cartItems, setCartItems] = useLocalStorage<CartItems[]>(
     'shopping-cart',
     []
@@ -133,6 +136,8 @@ export function MainContextProvider({ children }: MainContextProviderProps) {
         removeFromFav,
         isOpenMenu,
         setIsOpenMenu,
+        isOpenSidebar,
+        setIsOpenSidebar,
       }}
     >
       {children}
